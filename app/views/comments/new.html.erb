@@ -1,6 +1,6 @@
 <h1>New comment</h1>
 
-<% form_for(@comment) do |f| %>
+<% form_for([@track, @comment]) do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -8,6 +8,7 @@
     <%= f.text_field :content %>
   </p>
   <p>
+    <%= hidden_field_tag("comment[user_id]", @current_user.id) %>
     <%= f.submit 'Create' %>
   </p>
 <% end %>

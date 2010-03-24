@@ -1,11 +1,15 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  title: MyString
-  artist: MyString
-  url: MyString
+  id: 1
+  user_id: 1
+  title: Crysteena
+  artist: Mille
+  url: http://monospectra.com/monospectra/01%20Crysteena.mp3
 
 two:
-  title: MyString
-  artist: MyString
-  url: MyString
+  id: 2
+  user_id: 2
+  title: White Lies
+  artist: RxBandits
+  url: http://monospectra.com/monospectra/07%20White%20lies.mp3

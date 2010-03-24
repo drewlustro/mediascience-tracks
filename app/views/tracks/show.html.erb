@@ -1,18 +1,10 @@
-<p>
-  <b>Title:</b>
-  <%=h @track.title %>
-</p>
+<%= render :partial => "shared/track", :locals => {:track => @track } %>
 
-<p>
-  <b>Artist:</b>
-  <%=h @track.artist %>
-</p>
+<h3>Comments</h3>
+<div class="padded">
+  <%= render :partial => "shared/comment", :collection => @track.comments, :as => :comment %>
+</div>
 
-<p>
-  <b>Url:</b>
-  <%=h @track.url %>
-</p>
-
-
-<%= link_to 'Edit', edit_track_path(@track) %> |
-<%= link_to 'Back', tracks_path %>
+<% if @logged_in && @track.user_id == @current_user.id %>
+  Options: <%= link_to 'Edit', edit_track_path(@track) %>
+<% end %>

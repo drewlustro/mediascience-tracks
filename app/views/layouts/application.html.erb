@@ -6,6 +6,12 @@
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>Comments: <%= controller.action_name %></title>
   <%= stylesheet_link_tag 'default' %>
+  <%= javascript_include_tag 'audio-player' %>
+  <script type="text/javascript">  
+      AudioPlayer.setup("http://rubes:3000/swf/player.swf", {  
+          width: 290  
+      });  
+  </script>
 </head>
 <body>
   <div id="header">

@@ -9,7 +9,10 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :comments
   
   map.manage 'manage',:controller => "tracks", :action => "manage"
-  map.resources :tracks
+  map.resources :tracks do |tracks|
+    tracks.resources :comments
+  end
+  
   #map.connect 'tracks/manage', :controller => "tracks", :action => "manage"
 
   map.resources :users

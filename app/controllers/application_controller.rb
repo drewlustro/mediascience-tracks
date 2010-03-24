@@ -12,6 +12,8 @@ class ApplicationController < ActionController::Base
     def get_current_user
       @current_user ||= session[:current_user_id] && User.find(session[:current_user_id])
       @logged_in = @current_user ? true : false
+    rescue ActiveRecord::RecordNotFound => e
+      session[:current_user_id] = nil;
     end  
     
     def require_login

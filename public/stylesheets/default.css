@@ -98,6 +98,23 @@ a:active{
   color: #1460A7;
 }
 
+/* Track/Song containers */
+.track-container {
+  border: 1px solid #ccc;
+  -webkit-border-radius: 5px;
+  padding: 10px;
+  margin: 5px 0;
+}
+
+.track-player {
+  
+}
+
+.track-details {
+  font-size: 80%;
+  padding: 10px 0 0 10px;
+}
+
 /* Tables and Forms */
 
 .row {

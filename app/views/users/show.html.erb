@@ -1,28 +1,6 @@
-<p>
-  <b>Username:</b>
-  <%=h @user.username %>
-</p>
+<%= render :partial => "user", :locals => {:user => @user} %>
 
-<p>
-  <b>Password:</b>
-  <%=h @user.password %>
-</p>
-
-<p>
-  <b>Url:</b>
-  <%=h @user.url %>
-</p>
-
-<p>
-  <b>Image:</b>
-  <%=h @user.image %>
-</p>
-
-<p>
-  <b>Info:</b>
-  <%=h @user.info %>
-</p>
-
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<% if @logged_in &&  @user.id == @current_user.id %>
+  Options:
+  <%= link_to 'Edit Profile', edit_user_path(@user) %>
+<% end %>

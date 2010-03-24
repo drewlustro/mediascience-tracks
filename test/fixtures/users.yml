@@ -1,15 +1,17 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  username: MyString
-  password: MyString
-  url: MyString
-  image: MyString
-  info: MyString
+  id: 1
+  username: drew
+  password: password
+  url: http://monospectra.com
+  image: http://drewlustro.com/temp/jap.jpg
+  info: yegg!
 
 two:
-  username: MyString
-  password: MyString
-  url: MyString
-  image: MyString
-  info: MyString
+  id: 2
+  username: kane
+  password: password
+  url: http://google.com
+  image: http://disc.420chan.org/weed/thumb/1269402767692s.jpg
+  info: klang lives herr.

@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   
+  skip_before_filter :get_current_user, :only => [:destory]
   # login form
   def index
     render :action => "new"

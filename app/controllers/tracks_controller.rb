@@ -4,7 +4,7 @@ class TracksController < ApplicationController
   
   # GET /tracks
   def index
-    @tracks = Track.all
+    @tracks = Track.find(:all, :order => "created_at DESC")
 
 
   end
@@ -33,7 +33,8 @@ class TracksController < ApplicationController
   # POST /tracks
   def create
     @track = Track.new(params[:track])
-
+    @track.user_id = @current_user.id
+    
     if @track.save
       flash[:notice] = 'Track was successfully created.'
       redirect_to tracks_url

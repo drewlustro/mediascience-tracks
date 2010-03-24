@@ -1,0 +1,4 @@
+# Ignore tempoary files left over by textmate
+.AppleDouble*
+._*
+
