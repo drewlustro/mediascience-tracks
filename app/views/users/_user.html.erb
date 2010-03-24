@@ -1,0 +1,35 @@
+<style type="text/css">
+  .user-pic {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #eee;
+    padding: 1px;
+    margin-right: 10px;
+    float: left;
+  }
+  .user-info {
+    float: left;
+    width: 400px;
+  }
+</style>
+
+<% if user.image %>
+  <%= image_tag(user.image, :class => "user-pic") %>
+<% else %>
+  <div class="user-pic" style="background-color: #ddd">
+    &nbsp;
+  </div>
+<% end %>
+<div class="user-info">
+  <h2><%= link_to user.username, user_path(user) %></h2>
+  <% if user.url %>
+    [<%= link_to "site", user.url %>]
+  <% end %>
+  <div class="padded">
+    
+    <strong>Member Since:</strong> <%= user.created_at %>
+    <br />
+    <strong>Last Seen:</strong> <%= user.updated_at %>
+  </div>
+</div>
+<div class="clear"></div>

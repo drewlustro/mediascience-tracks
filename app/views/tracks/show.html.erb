@@ -1,0 +1,18 @@
+<p>
+  <b>Title:</b>
+  <%=h @track.title %>
+</p>
+
+<p>
+  <b>Artist:</b>
+  <%=h @track.artist %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%=h @track.url %>
+</p>
+
+
+<%= link_to 'Edit', edit_track_path(@track) %> |
+<%= link_to 'Back', tracks_path %>

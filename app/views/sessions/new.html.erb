@@ -1,0 +1,15 @@
+<h1>Enter Your Credentials</h1>
+
+<div style="width: 250px; border: 1px solid #ccc; margin: 10px; padding: 20px;">
+  <% form_tag :action => "create" do %>
+    <div class="key key-small"><%= label_tag(:username) %></div>
+    <div class="value value-small"><%= text_field_tag(:username, @username) %></div>
+    <div class="clear"></div>
+    <div class="key key-small"><%= label_tag(:password) %></div>
+    <div class="value value-small"><%= text_field_tag(:password) %></div>
+    <div class="clear"></div>
+    <div class="center">
+      <%= submit_tag("Login") %>
+    </div>
+  <% end %>
+</div>
