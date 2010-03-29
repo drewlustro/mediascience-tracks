@@ -1,0 +1,14 @@
+<div class="track-container">
+  <div class="track-player">
+    <p id="track_<%= track.id %>"><%= track.artist %> - <%= track.title %> (cannot be shown)</p>  
+    <script type="text/javascript">  
+      AudioPlayer.embed("track_<%= track.id %>", 
+        { soundFile: "<%= track.url %>",
+          titles: "<%= track.title %>",
+          artists: "<%= track.artist %>",
+          initialvolume: 85,
+          });  
+    </script>
+  </div>
+  <div class="clear"></div>
+</div>

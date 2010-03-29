@@ -13,3 +13,17 @@ two:
   title: White Lies
   artist: RxBandits
   url: http://monospectra.com/monospectra/07%20White%20lies.mp3
+  
+three:
+  id: 3
+  user_id: 1
+  title: Cult Logic
+  artist: Miike Snow
+  url: http://monospectra.com/monospectra/08%20Cult%20Logic.mp3
+
+four:
+  id: 4
+  user_id: 2
+  title: Ghosts N' Stuff
+  artist: Deadmau5
+  url: http://monospectra.com/monospectra/03%20Ghosts%20n%20Stuff%20(ft.%20Rob%20Swire).mp3

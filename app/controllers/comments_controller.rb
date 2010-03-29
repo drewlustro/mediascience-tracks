@@ -12,6 +12,7 @@ class CommentsController < ApplicationController
   end
 
   def new
+    
     @comment = @track.comments.build
     
   end
@@ -49,6 +50,11 @@ class CommentsController < ApplicationController
   
   private
     def get_track
-      @track = Track.find(params[:track_id])
+      if (params[:track_id])
+        @track = Track.find(params[:track_id])
+      else
+        flash[:error] = "No track specified to comment on."
+        redirect_to tracks_path
+      end
     end
 end

@@ -1,6 +1,6 @@
 <div class="track-container">
-  <p id="track_<%= track.id %>"><%= track.artist %> - <%= track.title %> (cannot be shown)</p>  
   <div class="track-player">
+    <p id="track_<%= track.id %>"><%= track.artist %> - <%= track.title %> (cannot be shown)</p>    
     <script type="text/javascript">  
       AudioPlayer.embed("track_<%= track.id %>", 
         { soundFile: "<%= track.url %>",
@@ -9,11 +9,18 @@
           initialvolume: 85,
           });  
     </script>
+    <div class="track-details">
+      <%= "#{track.artist} - #{track.title}" %>
+      <br />
+      <%= link_to "#{track.comments.size} Comments", track_path(track) %> / 
+      <%= link_to "add one", new_track_comment_path(track) %>
+    </div>
   </div>
-  <div class="track-details">
-    <%= "#{track.artist} - #{track.title}" %> <em>uploaded by <%= link_to track.user.username, user_path(track.user) %></em>
-    <br />
-    <%= link_to "New Comment (#{track.comments.size})", new_track_comment_path(track) %>
-  </div>
-
+  <% if track.user.image %>
+    <div class="track-user-pic"> 
+      <a href="<%= user_path(track.user) %>"><img src="<%= track.user.image %>" width="60" /></a>
+    </div>
+  <% end %>
+  <div class="clear"></div>
+  
 </div>

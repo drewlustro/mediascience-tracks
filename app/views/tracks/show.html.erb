@@ -1,4 +1,13 @@
-<%= render :partial => "shared/track", :locals => {:track => @track } %>
+<% if @track.user.image %>
+  <div style="float: right; width: 100px; height: 100px; padding: 1px; border: 1px solid #ccc; overflow: hidden;">
+    <a href="<%= user_path(@track.user) %>"><img src="<%= @track.user.image %>" width="100" /></a>
+  </div>
+<% end %>
+
+<h1><%= @track.artist %> - <%= @track.title %></h1>
+<%= render :partial => "shared/track_player", :locals => {:track => @track } %>
+
+<div class="clear"></div>
 
 <h3>Comments</h3>
 <div class="padded">
@@ -6,5 +15,5 @@
 </div>
 
 <% if @logged_in && @track.user_id == @current_user.id %>
-  Options: <%= link_to 'Edit', edit_track_path(@track) %>
+  Options: <%= link_to 'Modify Song Properties', edit_track_path(@track) %>
 <% end %>
