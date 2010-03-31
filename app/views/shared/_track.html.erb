@@ -3,9 +3,7 @@
     <p id="track_<%= track.id %>"><%= track.artist %> - <%= track.title %> (cannot be shown)</p>    
     <script type="text/javascript">  
       AudioPlayer.embed("track_<%= track.id %>", 
-        { soundFile: "<%= track.url %>",
-          titles: "<%= track.title %>",
-          artists: "<%= track.artist %>",
+        { soundFile: "<%= track.audio.url %>",
           initialvolume: 85,
           });  
     </script>
@@ -14,6 +12,9 @@
       <br />
       <%= link_to "#{track.comments.size} Comments", track_path(track) %> / 
       <%= link_to "add one", new_track_comment_path(track) %>
+      <% if @logged_in && track.user.id == @current_user.id %>
+        / <%= link_to "delete track", track_path(track), :method => :delete, :confirm => "Are you sure?" %>
+      <% end %>
     </div>
   </div>
   <% if track.user.image %>
