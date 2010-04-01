@@ -1,16 +1,1 @@
-<h1>New comment</h1>
-
-<% form_for([@track, @comment]) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :content %><br />
-    <%= f.text_field :content %>
-  </p>
-  <p>
-    <%= hidden_field_tag("comment[user_id]", @current_user.id) %>
-    <%= f.submit 'Create' %>
-  </p>
-<% end %>
-
-<%= link_to 'Back', comments_path %>
+Deprecated page. (new comment area)

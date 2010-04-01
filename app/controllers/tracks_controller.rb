@@ -12,6 +12,7 @@ class TracksController < ApplicationController
   # GET /tracks/1
   def show
     @track = Track.find(params[:id])
+    @comment = Comment.new
   end
 
   # GET /tracks/new
@@ -34,8 +35,8 @@ class TracksController < ApplicationController
   def create
     @track = Track.new(params[:track])
     @track.user_id = @current_user.id
-    
     if @track.save
+      @track.set_id3_info!
       flash[:notice] = 'Track was successfully created.'
       redirect_to tracks_url
     else

@@ -3,9 +3,7 @@
     <p id="track_<%= track.id %>"><%= track.artist %> - <%= track.title %> (cannot be shown)</p>  
     <script type="text/javascript">  
       AudioPlayer.embed("track_<%= track.id %>", 
-        { soundFile: "<%= track.url %>",
-          titles: "<%= track.title %>",
-          artists: "<%= track.artist %>",
+        { soundFile: "<%= track.audio.url %>",
           initialvolume: 85,
           });  
     </script>

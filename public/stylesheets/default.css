@@ -20,7 +20,6 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 
 body {
   font-family: Helvetica;
-  line-height: 1.1em;
   font-size: 100%;
 }
 
@@ -125,7 +124,49 @@ a:active{
   padding: 10px 0 0 10px;
 }
 
+/* Comments */
+
+.comment {
+  padding: 5px 0;
+}
+
+.comment-add-container {
+  border: 1px solid #ccc;
+  -webkit-border-radius: 5px;
+  padding: 10px;
+  margin: 5px 0;
+}
+
+.comment-user-pic {
+  float: left;
+  width: 50px;
+  padding: 1px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+  text-align: center;
+  font-size: 80%;
+}
+
+.comment-content { 
+  float: left;
+  width: 300px;
+}
+
+.comment-date {
+  margin-top: 5px;
+  padding-left: 20px;
+  font-size: 80%;
+  color: #92A5B9;
+}
+
 /* Tables and Forms */
+
+.form-container {
+  border: 1px solid #ccc;
+  margin: 10px;
+  padding: 20px;
+  -webkit-border-radius: 5px;
+}
 
 .row {
   border-bottom: 1px solid #5B7185;
@@ -160,7 +201,9 @@ a:active{
 .left   { text-align: left; }
 .center { text-align: center; }
 .right  { text-align: right; }
-  
 .padded { padding: 10px; }
 .clear { clear: both; }
+
+.divider { margin-top: 20px; border-top: 1px solid #ccc; }
+
   

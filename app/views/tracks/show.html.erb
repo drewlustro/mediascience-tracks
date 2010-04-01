@@ -1,19 +1,39 @@
+<div style="float: left; width: 475px; margin-right: 20px;">
+  
+
+  <div class="header"><%= @track.artist %> - <%= @track.title %></div>
+  <%= render :partial => "shared/track_player", :locals => {:track => @track } %>
+
+  <div class="clear"></div>
+
+  <h3><%= @track.comments.size %> Comment<%= @track.comments.size == 1 ? "" : "s" %></h3>
+  <div class="comment-add-container">
+    <% if @track.comments.size > 0 %>
+      <%= render :partial => "shared/comment", :collection => @track.comments, :as => :comment %>
+    <% else %>
+      <em>No comments.</em>
+    <% end %>
+    <% if (@logged_in) %>
+      <% form_for([@track, @comment]) do |f| %>
+        <%= f.error_messages %>
+        <%= f.text_field :content, :size => 60 %>
+        <%= hidden_field_tag("comment[user_id]", @current_user.id) %>
+        <%= f.submit 'Add Comment' %>
+      <% end %>
+    <% else %>
+      Please <%= link_to "login", login_path %> to comment.
+    <% end %>
+  </div>
+
+  <% if false && @logged_in && @track.user_id == @current_user.id %>
+    Options: <%= link_to 'Modify Song Properties', edit_track_path(@track) %>
+  <% end %>
+</div>
 <% if @track.user.image %>
-  <div style="float: right; width: 100px; height: 100px; padding: 1px; border: 1px solid #ccc; overflow: hidden;">
+  <div style="float: left; width: 100px;">
     <a href="<%= user_path(@track.user) %>"><img src="<%= @track.user.image %>" width="100" /></a>
   </div>
 <% end %>
 
-<h1><%= @track.artist %> - <%= @track.title %></h1>
-<%= render :partial => "shared/track_player", :locals => {:track => @track } %>
-
 <div class="clear"></div>
 
-<h3>Comments</h3>
-<div class="padded">
-  <%= render :partial => "shared/comment", :collection => @track.comments, :as => :comment %>
-</div>
-
-<% if @logged_in && @track.user_id == @current_user.id %>
-  Options: <%= link_to 'Modify Song Properties', edit_track_path(@track) %>
-<% end %>

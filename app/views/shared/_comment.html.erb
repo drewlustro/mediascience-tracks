@@ -1,3 +1,16 @@
 <div class="comment">
-  <%= comment.created_at %>: <%= comment.content %>
+  <div class="comment-user-pic">
+    <% if comment.user.image %>
+      <a href="<%= user_path(comment.user) %>"><img src="<%= comment.user.image %>" width="50" height="50" /></a>
+      <br />
+    <% end %>
+    <strong><%= comment.user.username %></strong>
+  </div>
+  <div class="comment-content">
+    <%= comment.content %>
+    <div class="comment-date">
+      <%= comment.created_at %>
+    </div>
+  </div>
+  <div class="clear"></div>
 </div>
